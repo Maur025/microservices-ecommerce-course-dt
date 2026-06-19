@@ -1,0 +1,20 @@
+services:
+  rabbitmq:
+    container_name: rabbitmq
+    hostname: rabbitmq    
+    image: rabbitmq:4.0-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - compose-net
+    restart: unless-stopped
+
+volumes:
+  rabbitmq_data:
+
+networks:
+  compose-net:
+    external: true
