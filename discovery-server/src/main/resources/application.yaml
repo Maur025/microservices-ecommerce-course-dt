@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: discovery-server
+
+server:
+  port: 8761 # puerto estandar mundial de eurka server
+eureka:
+  client: # puede existir varios server eureka ejemplo A,B,C, sirve para sincronizar la informacion entre ellos
+    register-with-eureka: false # por defecto es true, en false quitamos replicacion y sincronozacion entre servidores
+    fetch-registry: false # por defecto es true, indicamos que es la unica fuente de verdad, para que no intente descargar o sincronizar datos
