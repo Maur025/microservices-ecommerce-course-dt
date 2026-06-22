@@ -4,3 +4,17 @@ spring:
   threads:
     virtual:
       enabled: true
+
+  mongodb:
+    database: ${mongodb-config.database}
+
+server:
+  port: 8080
+
+mongodb-config:
+  database: ${MONGO_DB:product-db}
+  username: ${MONGO_USERNAME:youruser}
+  password: ${MONGO_PASSWORD:yourpassword}
+  host: ${MONGO_HOST:localhost}
+  port: ${MONGO_PORT:27017}
+  auth-database: ${MONGO_AUTH_DB:admin}
